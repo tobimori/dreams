@@ -20,7 +20,20 @@
     <footer>
       <section class="container">
         <div class="footer-left">
-          <span>{{@site.title}}</span>
+          <a href="{{@site.url}}">
+            {{#if @site.logo}}
+              <img class="logo" src="{{@site.logo}}" alt="Logo of {{@site.title}}">
+            {{else}}
+              <span class="title">{{@site.title}}</span>
+            {{/if}}
+          </a>
+          {{#if @site.secondary_navigation}}
+            <div class="secondary-nav">
+              {{#foreach @site.secondary_navigation}}
+                <a class="{{slug}}" href="{{url absolute="true"}}"><span>{{label}}</span></a>
+              {{/foreach}}
+            </div>
+          {{/if}}  
         </div>
         <div class="footer-right">
           <span class="copyright">Copyright &copy; {{@site.title}}, {{date format="YYYY"}}. All Rights Reserved.</span>
