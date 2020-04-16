@@ -13,8 +13,21 @@
   </head>
   <body class="{{body_class}}"> 
 
-      {{{body}}}
+    {{{body}}}
 
-  {{ghost_foot}}
+    {{ghost_foot}}
+
+    <footer>
+      <section class="container">
+        <div class="footer-left">
+          <span>{{@site.title}}</span>
+        </div>
+        <div class="footer-right">
+          <span class="copyright">Copyright &copy; {{@site.title}}, {{date format="YYYY"}}. All Rights Reserved.</span>
+          <span class="credits">Published with <a href="https://ghost.org/">Ghost</a>.</span>
+          <span class="credits"><a href="https://github.com/tobimori/dreams/">Dreams</a> made with ❤︎ by <a href="https://github.com/tobimori/">tobimori</a>.</span>
+        </div>
+      </section>
+    </footer>
   </body>
 </html>

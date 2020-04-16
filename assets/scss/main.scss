@@ -143,3 +143,36 @@ section.articles {
     }
   }
 }
+
+footer {
+  padding: 45px 0;
+  background-color: #f6f8fa;
+  width: 100%;
+  display: flex;
+
+  div.footer-right {
+    float: right;
+    text-align: right;
+    font-size: 0.9em;
+    line-height: 1.5em;
+    
+    span {
+      display: block;
+      color: #c1c1c1;
+
+      a {
+        text-decoration: none;
+        color: currentColor;
+      }
+    }
+  }
+
+  div.footer-left {
+    float: left;
+
+    span {
+      font-size: 1.5em;
+      font-weight: 700;
+    }
+  }
+}
