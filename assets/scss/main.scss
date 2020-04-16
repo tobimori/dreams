@@ -14,6 +14,55 @@ section.container {
   margin: 0 auto;
 }
 
+header.global {
+  padding: 20px 0;
+  width: 100%;
+
+  section.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  a {
+    text-decoration: none;
+    color: currentColor;
+  } 
+
+  div.nav {
+    text-align: right;
+    line-height: 1.5em;
+
+    a {
+      display: inline;
+      color: #fff;
+      margin: 0 1em;
+      text-transform: uppercase;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  div.brand {
+    img.logo {
+      filter: brightness(255);
+      height: 2em;
+    }
+
+    span.title {
+      font-size: 1.5em;
+      font-weight: 700;
+      color: #fff;
+    }
+  }
+}
+
 header.featured {
   height: 100vh;
 
@@ -25,6 +74,7 @@ header.featured {
     width: 100%;
     object-fit: cover;
     filter: brightness(0.8);
+    z-index: -1;
   }
 
   section.container {
@@ -64,7 +114,7 @@ header.featured {
 
 section.articles {
   position: relative;
-  top: -150px;
+  top: -250px;
   background-color: white;
   z-index: 2;
   padding: 50px 8%;

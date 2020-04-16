@@ -12,7 +12,27 @@
     {{ghost_head}}
   </head>
   <body class="{{body_class}}"> 
-
+    <header class="global">
+      <section class="container">
+        <div class="brand">
+          <a href="{{@site.url}}">
+            {{#if @site.logo}}
+            <img class="logo" src="{{@site.logo}}" alt="Logo of {{@site.title}}">
+            {{else}}
+            <span class="title">{{@site.title}}</span>
+            {{/if}}
+          </a>
+        </div>
+        {{#if @site.navigation}}
+          <div class="nav">
+            {{#foreach @site.navigation}}
+              <a class="{{slug}}" href="{{url absolute="true"}}">{{label}}</a>
+            {{/foreach}}
+          </div>
+        {{/if}}
+      </section>
+    </header>
+    
     {{{body}}}
 
     {{ghost_foot}}
