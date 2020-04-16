@@ -22,6 +22,10 @@
         by <span>{{posts.0.authors.0.name}}</span> on <span>{{date posts.0.published_at format="DD. MMMM YYYY"}}</span>
       </div>
       <p>{{posts.0.excerpt}}</p>
+      <a href="{{posts.0.primary_tag.url}}" class="tag">
+        {{> "icons/tag"}}
+        {{posts.0.primary_tag.name}}
+      </a>
     </div>
     <div class="margin-left">
       <img class="post-image" src="{{posts.0.feature_image}}">
@@ -32,18 +36,26 @@
       <div class="margin-right">
         <h1>{{posts.1.title}}</h1>
         <div class="meta">
-          by <span>{{posts.0.authors.0.name}}</span> on <span>{{date posts.0.published_at format="DD. MMMM YYYY"}}</span>
+          by <span>{{posts.1.authors.0.name}}</span> on <span>{{date posts.1.published_at format="DD. MMMM YYYY"}}</span>
         </div>
         <p>{{posts.1.excerpt}}</p>
+        <a href="{{posts.1.primary_tag.url}}" class="tag">
+          {{> "icons/tag"}}
+          {{posts.1.primary_tag.name}}
+        </a>
       </div>
     </article>
     <article>
       <div class="margin-left">
         <h1>{{posts.2.title}}</h1>
         <div class="meta">
-          by <span>{{posts.0.authors.0.name}}</span> on <span>{{date posts.0.published_at format="DD. MMMM YYYY"}}</span>
+          by <span>{{posts.2.authors.0.name}}</span> on <span>{{date posts.2.published_at format="DD. MMMM YYYY"}}</span>
         </div>
         <p>{{posts.2.excerpt}}</p>
+        <a href="{{posts.2.primary_tag.url}}" class="tag">
+          {{> "icons/tag"}}
+          {{posts.2.primary_tag.name}}
+        </a>
       </div>
     </article>
   </div>
@@ -54,9 +66,13 @@
     <div class="margin-left">
       <h1>{{posts.3.title}}</h1>
       <div class="meta">
-        by <span>{{posts.0.authors.0.name}}</span> on <span>{{date posts.0.published_at format="DD. MMMM YYYY"}}</span>
+        by <span>{{posts.3.authors.0.name}}</span> on <span>{{date posts.3.published_at format="DD. MMMM YYYY"}}</span>
       </div>
       <p>{{posts.3.excerpt}}</p>
+      <a href="{{posts.3.primary_tag.url}}" class="tag">
+        {{> "icons/tag"}}
+        {{posts.3.primary_tag.name}}
+      </a>
     </div>
   </article>
 </section>

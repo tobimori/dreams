@@ -39,11 +39,6 @@ header.featured {
         color: currentColor;
         line-height: 1.2em;
 
-        &.read-button {
-          text-transform: uppercase;
-          text-anchor: middle;
-        }
-
         svg {
           float: left;
           height: 1.2em;
@@ -120,6 +115,20 @@ section.articles {
           font-weight: 600;
         }
       }
+
+      a.tag {
+        text-decoration: none;
+        color: currentColor;
+        line-height: 1.2em;
+
+        svg {
+          float: left;
+          height: 1.2em;
+          width: auto;
+          margin-right: 1em;
+        }
+      }
+
     }
 
     img.post-image {
