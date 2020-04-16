@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+  font-size: 15px;
+  background-color: #ececec;
+}
+
+section.container {
+  width: 85%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+header.featured {
+  height: 100vh;
+
+  img.feature-image {
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+    filter: brightness(0.8);
+  }
+
+  section.container {
+    div.featured-container {
+      width: 70%;
+      position: absolute;
+      top: 35vh;
+      color: white;
+
+      a {
+        text-decoration: none;
+        color: currentColor;
+        line-height: 1.2em;
+
+        &.read-button {
+          text-transform: uppercase;
+          text-anchor: middle;
+        }
+
+        svg {
+          float: left;
+          height: 1.2em;
+          width: auto;
+          margin-right: 1em;
+        }
+      }
+
+      h1.feature-headline {
+        font-size: 4em;
+        margin: .2em 0 0 0;
+      }
+
+      p.feature-preview {
+        padding-left: 0.2em;
+        width: 50%;
+        line-height: 1.55;
+        letter-spacing: .02em;
+      }
+    }
+  }
+}
+
+section.articles {
+  position: relative;
+  top: -150px;
+  background-color: white;
+  z-index: 2;
+  padding: 50px 8%;
+  border-radius: 5px;
+
+  article {
+    display: flex;
+    flex: 0;
+    margin: 5em 0;
+    
+    &:first-child {
+      margin-top: 0;
+    }
+
+    div {
+      width: 55%;
+      margin-right: 50px;
+
+      h1 {
+        margin: 0;
+        font-size: 2.2em;
+        color: #303030;
+      }
+
+      p {
+        line-height: 1.55;
+        letter-spacing: .02em;        
+        color: #545454;
+      }
+    }
+
+    img.post-image {
+      width: 55%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+  }
+}

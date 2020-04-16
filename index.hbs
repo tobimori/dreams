@@ -1,0 +1,48 @@
+{{!< default}}
+
+{{#get "posts" include="tags,authors" filter="featured:true" limit="1" as |featured|}}
+  {{#if featured}}
+    {{#foreach featured}}
+      {{> "top-story"}}
+    {{/foreach}}
+  {{else}}
+    {{#get "posts" include="tags,authors" limit="1" as |lastpost|}}
+      {{#foreach lastpost}}
+        {{> "top-story"}}
+      {{/foreach}}
+    {{/get}}
+  {{/if}}
+{{/get}}
+
+<section class="container articles">
+  <article >
+    <div>
+      <h1>{{posts.0.title}}</h1>
+      <p>{{posts.0.excerpt}}</p>
+    </div>
+    <div>
+      <img class="post-image" src="{{posts.0.feature_image}}">
+    </div>
+  </article>
+  <article>
+    <div>
+      <h1>{{posts.1.title}}</h1>
+      <p>{{posts.1.excerpt}}</p>
+    </div>
+  </article>
+  <article>
+    <div>
+      <h1>{{posts.2.title}}</h1>
+      <p>{{posts.2.excerpt}}</p>
+    </div>
+  </article>
+  <article>
+    <div>
+      <img class="post-image" src="{{posts.3.feature_image}}">
+    </div>
+    <div>
+      <h1>{{posts.3.title}}</h1>
+      <p>{{posts.3.excerpt}}</p>
+    </div>
+  </article>
+</section>

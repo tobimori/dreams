@@ -1,0 +1,49 @@
+{
+  "name": "dreams",
+  "description": "Dreams is an upcoming theme for the Node.js CMS Ghost. ",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "gulp && gulp develop",
+    "build": "gulp",
+    "start-ghost-via-cli": "cd ../../../ && ghost start",
+    "stop-ghost-via-cli": "cd ../../../ && ghost stop",
+    "restart-ghost-via-cli": "cd ../../../ && ghost restart"
+  },
+  "engines": {
+    "ghost": ">=3.0.0",
+    "ghost-api": "v3"
+  },
+  "license": "All rights reserved.",
+  "author": {
+    "name": "tobimori",
+    "email": "tobias@moeritz.cc",
+    "url": "https://moeritz.cc"
+  },
+  "gpm": {
+    "type": "theme",
+    "categories": [
+      "Minimal",
+      "Blog",
+      "Magazine"
+    ]
+  },
+  "keywords": [
+    "ghost-theme",
+    "ghost",
+    "theme"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tobimori/dreams/ingenious"
+  },
+  "bugs": "https://github.com/tobimori/dreams/issues",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-dart-sass": "^1.0.0",
+    "sass": "^1.26.3"
+  },
+  "config": {
+    "posts_per_page": 4
+  }
+}
