@@ -15,33 +15,47 @@
 {{/get}}
 
 <section class="container articles">
-  <article >
-    <div>
+  <article class="image-right no-margin">
+    <div class="margin-right">
       <h1>{{posts.0.title}}</h1>
+      <div class="meta">
+        by <span>{{posts.0.authors.0.name}}</span> on <span>{{date posts.0.published_at format="DD. MMMM YYYY"}}</span>
+      </div>
       <p>{{posts.0.excerpt}}</p>
     </div>
-    <div>
+    <div class="margin-left">
       <img class="post-image" src="{{posts.0.feature_image}}">
     </div>
   </article>
+  <div class="two-articles">
+    <article>
+      <div class="margin-right">
+        <h1>{{posts.1.title}}</h1>
+        <div class="meta">
+          by <span>{{posts.0.authors.0.name}}</span> on <span>{{date posts.0.published_at format="DD. MMMM YYYY"}}</span>
+        </div>
+        <p>{{posts.1.excerpt}}</p>
+      </div>
+    </article>
+    <article>
+      <div class="margin-left">
+        <h1>{{posts.2.title}}</h1>
+        <div class="meta">
+          by <span>{{posts.0.authors.0.name}}</span> on <span>{{date posts.0.published_at format="DD. MMMM YYYY"}}</span>
+        </div>
+        <p>{{posts.2.excerpt}}</p>
+      </div>
+    </article>
+  </div>
   <article>
-    <div>
-      <h1>{{posts.1.title}}</h1>
-      <p>{{posts.1.excerpt}}</p>
-    </div>
-  </article>
-  <article>
-    <div>
-      <h1>{{posts.2.title}}</h1>
-      <p>{{posts.2.excerpt}}</p>
-    </div>
-  </article>
-  <article>
-    <div>
+    <div class="margin-right">
       <img class="post-image" src="{{posts.3.feature_image}}">
     </div>
-    <div>
+    <div class="margin-left">
       <h1>{{posts.3.title}}</h1>
+      <div class="meta">
+        by <span>{{posts.0.authors.0.name}}</span> on <span>{{date posts.0.published_at format="DD. MMMM YYYY"}}</span>
+      </div>
       <p>{{posts.3.excerpt}}</p>
     </div>
   </article>
