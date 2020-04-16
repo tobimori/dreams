@@ -5,6 +5,7 @@ body {
   overflow-x: hidden;
   font-size: 15px;
   background-color: #ececec;
+  font-weight: 400;
 }
 
 section.container {
@@ -107,6 +108,17 @@ section.articles {
         line-height: 1.55;
         letter-spacing: .02em;        
         color: #545454;
+      }
+
+      div.meta {
+        margin-top: 0.5em;
+        margin-bottom: -0.3em;
+        color: #545454;
+
+        span {
+          color: #111;
+          font-weight: 600;
+        }
       }
     }
 
