@@ -76,6 +76,10 @@ section.articles {
   
   div.two-articles {
     display: flex;
+
+    article {
+      width: 50%;
+    }
   }
 
   article {
