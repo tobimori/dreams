@@ -35,7 +35,8 @@ header.global {
   padding: 30px 0;
   width: 100%;
   position: absolute;
-
+  text-shadow: 0 1rem 2rem rgba(50, 50, 50, .5);    
+  
   div {
     display: flex;
     justify-content: space-between;
@@ -143,7 +144,7 @@ header.featured {
         display: flex;
         margin-left: .2em;
         text-shadow: 0 1rem 2rem rgba(50, 50, 50, .5);    
-        
+
         &.feature-tag {
           svg {
             margin-right: 1em;
