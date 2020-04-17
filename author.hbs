@@ -52,7 +52,7 @@
 
 <div class="container overlap">
   <section class="articles">
-    {{#if posts.0}}
+    {{#if posts.0.title}}
     <div class="row">
       <article>
         <div class="column left">
@@ -80,7 +80,7 @@
     </div>
     {{/if}}
     <div class="row">
-      {{#if posts.1}}
+      {{#if posts.1.title}}
       <article class="half">
         <div class="column full left">
           <a href="{{posts.1.url}}">
@@ -100,7 +100,7 @@
         </div>
       </article>
       {{/if}}
-      {{#if posts.2}}
+      {{#if posts.2.title}}
       <article class="half">
         <div class="column full right">
           <a href="{{posts.2.url}}">
@@ -121,7 +121,7 @@
       </article>
       {{/if}}
     </div>
-    {{#if posts.3}}
+    {{#if posts.3.title}}
     <div class="row">
       <article>
         <div class="column left">
