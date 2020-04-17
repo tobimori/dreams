@@ -290,10 +290,52 @@ article.main {
   color: #545454;
   font-size: 1.05em;
   text-align: justify;
+
+  p,
+  li,
+  blockquote {
+    line-height: 1.45;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-bottom: -0.5em;
+    color: #272727;
+  }
+
+  figure.kg-image-card {
+    margin: 1em 0;
+    position: relative;
+    left: 7%;
+    width: 60%;
+    float: right;
+
+    &.kg-width-wide {
+      width: 100%;
+      float: none;
+      left: 0;
+    }
+
+    &.kg-width-full {
+      width: 120%;
+      position: relative;
+      left: -10%;
+      float: none;
+    }
+
+    img.kg-image {
+      width: 100%;
+      border-radius: 5px;
+    }
+  }
 }
 
 footer {
-  padding: 60px 0;
+  padding: 5rem 0;
   background-color: #f6f8fa;
   width: 100%;
 
