@@ -260,6 +260,7 @@ aside.about {
 
       div.icons {
         display: flex;
+        margin-top: .5em;
 
         a.icon {
           line-height: 1.2em;
@@ -268,6 +269,12 @@ aside.about {
             height: 1.2em;
             width: auto;
             margin-right: 1em;
+            color: #666;
+            transition: color 250ms ease-in-out;
+
+            &:hover {
+              color: #111;
+            }
           }
         }
       }
