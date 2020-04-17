@@ -16,6 +16,7 @@
 
 <div class="container overlap">
   <section class="articles">
+    {{#if posts.0}}
     <div class="row">
       <article>
         <div class="column left">
@@ -41,7 +42,9 @@
         </div>
       </article>
     </div>
+    {{/if}}
     <div class="row">
+      {{#if posts.1}}
       <article class="half">
         <div class="column full left">
           <a href="{{posts.1.url}}">
@@ -60,6 +63,8 @@
           </aside>
         </div>
       </article>
+      {{/if}}
+      {{#if posts.2}}
       <article class="half">
         <div class="column full right">
           <a href="{{posts.2.url}}">
@@ -78,7 +83,9 @@
           </aside>
         </div>
       </article>
+      {{/if}}
     </div>
+    {{#if posts.3}}
     <div class="row">
       <article>
         <div class="column left">
@@ -104,5 +111,6 @@
         </div>
       </article>
     </div>
+    {{/if}}
   </section>
-</div>
+  </div>
