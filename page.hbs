@@ -1,23 +1,21 @@
 {{!< default}}
 
 {{#post}}
-<article class="gh-article {{post_class}}">
-
-    <header class="gh-header gh-canvas">
-        <h1 class="gh-title">{{title}}</h1>
-
-        {{#if custom_excerpt}}
-            <p class="gh-excerpt">{{custom_excerpt}}</p>
-        {{/if}}
-
-        {{#if feature_image}}
-            <img class="gh-feature-image" src="{{feature_image}}" alt="{{title}}" />
-        {{/if}}
-    </header>
-
-    <div class="gh-content gh-canvas">
-        {{content}}
+<header class="featured"
+  style="background: linear-gradient(to top, rgba(0,0,0,.2), rgba(0,0,0,.3)), url({{feature_image}}) no-repeat center / cover, #111111">
+  <div class="container">
+    <div class="featured-container">
+      <h1 class="feature-headline">{{title}}</h1>
     </div>
+  </div>
+  </div>
+</header>
 
-</article>
+<div class="container overlap-further">
+  <article class="main {{post_class}}">
+    {{content}}
+  </article>
+</div>
+
+
 {{/post}}
