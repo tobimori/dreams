@@ -291,22 +291,40 @@ section.articles {
   border-radius: 5px;
   display: flex;
   flex-direction: column;
+  padding-bottom: 50px;
+
+  @media #{$small-device} {
+    padding-bottom: 30px;
+  }
 
   div.row {
     display: flex;
     flex-direction: row;
 
+    @media #{$small-device} {
+      flex-direction: column;
+      align-items: center;
+    }
+
     article {
       display: flex;
       flex-direction: row;
 
+      &.half {
+        width: 50%;
+
+        @media #{$small-device} {
+          width: 80%;
+        }
+      }
+      
       @media #{$small-device} {
         flex-direction: column;
         align-items: center;
       }
 
       div.column {
-        padding: 50px 5%;
+        padding: 50px 50px 0 50px;
         display: flex;
         flex-direction: column;
         width: 50%;
@@ -315,24 +333,27 @@ section.articles {
           width: 80%;
         }
 
+        &.full {
+          width: 100%;
+        }
+
         &.left {
-          padding-right: 2%;
+          padding-right: 30px;
 
           @media #{$small-device} {
-            padding: 30px 5% 30px 5%;
+            padding-right: 50px;
           }
         }
 
         &.right {
-        padding-left: 2%;
+          padding-left: 30px;
 
           @media #{$small-device} {
-            padding: 30px 5% 0 5%;
+            padding-left: 50px;
           }        
         }
       }      
     }
-
 
     img {
       width: 100%;
@@ -344,7 +365,7 @@ section.articles {
     color: #303030;
   }
 
-  p {
+  p.excerpt {
     line-height: 1.55;
     letter-spacing: .02em;        
     color: #555;
@@ -392,78 +413,6 @@ section.articles {
       }
     }
   }  
-
-  .no-margin {
-    margin-top: 0;
-  }
-  
-  div.two-articles {
-    display: flex;
-
-    article {
-      width: 50%;
-    }
-  }
-
-/*  article {
-    display: flex;
-    margin: 2em 0;
-
-    div.margin-right {
-      margin-right: 2em;
-    }
-
-    div.margin-left {
-      margin-left: 2em;
-    }
-
-    div {
-      width: 100%;
-
-      h1 {
-        margin: 0;
-        font-size: 2.2em;
-        color: #303030;
-      }
-
-      p {
-        line-height: 1.55;
-        letter-spacing: .02em;        
-        color: #545454;
-      }
-
-      div.meta {
-        margin-top: 0.5em;
-        margin-bottom: -0.3em;
-        color: #545454;
-
-        span {
-          color: #111;
-          font-weight: 600;
-        }
-      }
-
-      a.tag {
-        text-decoration: none;
-        color: currentColor;
-        line-height: 1.2em;
-
-        svg {
-          float: left;
-          height: 1.2em;
-          width: auto;
-          margin-right: 1em;
-        }
-      }
-    }
-
-    img.post-image {
-      width: 100%;
-      height: 300px;
-      object-fit: cover;
-      border-radius: 5px;
-    }
-  }*/
 }
 
 article.main {
@@ -520,6 +469,7 @@ article.main {
   }
 }
 
+// Footer
 footer {
   padding: 5rem 0;
   background-color: #f6f8fa;
@@ -529,47 +479,42 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
-
-  a {
-    text-decoration: none;
-    color: currentColor;
-  }
-
-  div.footer-right {
-    text-align: right;
-    font-size: 0.9em;
-    line-height: 1.5em;
-
-    span {
-      display: block;
-      color: #c1c1c1;
-    }
-  }
-
-  div.footer-left {
-    img.logo {
-      filter: brightness(0);
-      height: 2em;
-    }
-
-    span.title {
-      font-size: 1.5em;
-      font-weight: 700;
-    }
-
-    div.secondary-nav {
-      margin-top: 1em;
-      text-transform: uppercase;
-      color: #c1c1c1;
+    
+    div.footer-right {
+      text-align: right;
+      font-size: 0.9em;
+      line-height: 1.5em;
 
       span {
-        margin-right: 1em;
-      }
-
-      a:hover {
-        color: #111;
+        display: block;
+        color: #c1c1c1;
       }
     }
+
+    div.footer-left {
+      img.logo {
+        filter: brightness(0);
+        height: 2em;
+      }
+
+      span.title {
+        font-size: 1.5em;
+        font-weight: 700;
+      }
+
+      div.secondary-nav {
+        margin-top: 1em;
+        text-transform: uppercase;
+        color: #c1c1c1;
+
+        span {
+          margin-right: 1em;
+        }
+
+        a:hover {
+          color: #111;
+        }
+      }
+    }    
   }
 }
