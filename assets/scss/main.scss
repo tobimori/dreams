@@ -31,12 +31,6 @@ div.container {
   margin: 0 auto;
 }
 
-div.container-big {
-  width: 85%;
-  max-width: 1300px;
-  margin: 0 auto;
-}
-
 header.global {
   padding: 30px 0;
   width: 100%;
@@ -111,6 +105,7 @@ header.featured {
         align-items: center;
         display: flex;
         margin-left: .2em;
+        width: 30%;
 
         &.feature-tag {
           svg {
