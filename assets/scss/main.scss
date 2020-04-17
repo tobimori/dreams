@@ -7,6 +7,8 @@ $large-device: "only screen and (min-width: 1442px)";
 $ultra-large: "only screen and (min-width: 2202px)";
 $retina-device: "only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 1.5dppx), only screen and (min-resolution: 144dpi)";
 
+// colors
+$light-background1: #fff;
 
 html,
 body {
@@ -282,18 +284,115 @@ aside.about {
   }  
 }
 
+// Article list
 section.articles {
-  background-color: white;
+  background-color: $light-background1;
   z-index: 2;
-  padding: 50px 8%;
   border-radius: 5px;
-  display: grid;
+  display: flex;
+  flex-direction: column;
+
+  div.row {
+    display: flex;
+    flex-direction: row;
+
+    article {
+      display: flex;
+      flex-direction: row;
+
+      @media #{$small-device} {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      div.column {
+        padding: 50px 5%;
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+
+        @media #{$small-device} {
+          width: 80%;
+        }
+
+        &.left {
+          padding-right: 2%;
+
+          @media #{$small-device} {
+            padding: 30px 5% 30px 5%;
+          }
+        }
+
+        &.right {
+        padding-left: 2%;
+
+          @media #{$small-device} {
+            padding: 30px 5% 0 5%;
+          }        
+        }
+      }      
+    }
+
+
+    img {
+      width: 100%;
+    }
+  }
+  
+  h1 {
+    font-size: 2.2em;
+    color: #303030;
+  }
+
+  p {
+    line-height: 1.55;
+    letter-spacing: .02em;        
+    color: #555;
+  }
 
   a {
     text-decoration: none;
     color: currentColor;
   }
-  
+
+  aside.meta-text {
+    margin-top: 0.5em;
+    margin-bottom: -0.3em;
+    color: #666;
+
+    a {
+      color: #666;
+      font-weight: 600;
+      transition: color 250ms ease-in-out;
+
+      &:hover {
+        color: #111;
+      }
+    }
+  }  
+
+  aside.meta {
+    display: flex;
+    margin-top: .5em;
+
+    a.meta, span.meta {
+      line-height: 1.2em;
+      color: #666;
+      transition: color 250ms ease-in-out;
+      display: flex;
+
+      &:hover {
+        color: #111;
+      }
+
+      svg {
+        height: 1.2em;
+        width: auto;
+        margin-right: .8em;
+      }
+    }
+  }  
+
   .no-margin {
     margin-top: 0;
   }
@@ -306,7 +405,7 @@ section.articles {
     }
   }
 
-  article {
+/*  article {
     display: flex;
     margin: 2em 0;
 
@@ -364,7 +463,7 @@ section.articles {
       object-fit: cover;
       border-radius: 5px;
     }
-  }
+  }*/
 }
 
 article.main {

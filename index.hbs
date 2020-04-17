@@ -17,7 +17,7 @@
 <div class="container">
   <section class="articles">
     <article class="image-right no-margin">
-      <div class="margin-right">
+      <div class="column left">
         <a href="{{posts.0.url}}">
           <h1>{{posts.0.title}}</h1>
         </a>
@@ -25,12 +25,14 @@
           by <a href="{{posts.0.authors.0.url}}" class="author"><span>{{posts.0.authors.0.name}}</span></a> on <span>{{date posts.0.published_at format="DD. MMMM YYYY"}}</span>
         </div>
         <p>{{posts.0.excerpt}}</p>
-        <a href="{{posts.0.primary_tag.url}}" class="tag">
-          {{> "icons/tag"}}
-          {{posts.0.primary_tag.name}}
-        </a>
+        <aside class="meta">
+          <a href="{{posts.0.primary_tag.url}}" class="tag">
+            {{> "icons/tag"}}
+            {{posts.0.primary_tag.name}}
+          </a>
+        </aside>
       </div>
-      <div class="margin-left">
+      <div class="column right">
         <a href="{{posts.0.url}}">
           <img class="post-image" src="{{posts.0.feature_image}}">
         </a>

@@ -50,29 +50,36 @@
 </div>
 {{/author}}
 
-<div class="container">
+<div class="container overlap">
   <section class="articles">
-    <article>
-      <div class="margin-right">
-        <a href="{{posts.0.url}}">
-          <img class="post-image" src="{{posts.0.feature_image}}">
-        </a>
-      </div>
-      <div class="margin-left">
-        <a href="{{posts.0.url}}">
-          <h1>{{posts.0.title}}</h1>
-        </a>
-        <div class="meta">
-          by <a href="{{posts.0.authors.0.url}}" class="author"><span>{{posts.0.authors.0.name}}</span></a> on
-          <span>{{date posts.0.published_at format="DD. MMMM YYYY"}}</span>
+    <div class="row">
+      <article>
+        <div class="column left">
+          <a href="{{posts.0.url}}">
+            <img class="post-image" src="{{posts.0.feature_image}}">
+          </a>
         </div>
-        <p>{{posts.0.excerpt}}</p>
-        <a href="{{posts.0.primary_tag.url}}" class="tag">
-          {{> "icons/tag"}}
-          {{posts.0.primary_tag.name}}
-        </a>
-      </div>
-    </article>
+        <div class="column right">
+          <a href="{{posts.0.url}}">
+            <h1>{{posts.0.title}}</h1>
+          </a>
+          <aside class="meta-text">
+            by <a href="{{posts.0.authors.0.url}}" class="author"><span>{{posts.0.authors.0.name}}</span></a> on
+            <span>{{date posts.0.published_at format="DD. MMMM YYYY"}}</span>
+          </aside>
+          <p>{{posts.0.excerpt}}</p>
+          <aside class="meta">
+            <a class="meta" href="{{posts.0.primary_tag.url}}">
+              {{> "icons/tag"}}
+              {{posts.0.primary_tag.name}}
+            </a>
+          </aside>
+        </div>
+      </article>
+    </div>
+    <div class="row"></div>
+    <div class="row"></div>
+
     <div class="two-articles">
       <article>
         <div class="margin-right">
