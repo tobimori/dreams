@@ -13,7 +13,7 @@
   </head>
   <body class="{{body_class}}"> 
     <header class="global">
-      <section class="container-big">
+      <div class="container">
         <div class="brand">
           <a href="{{@site.url}}">
             {{#if @site.logo}}
@@ -30,13 +30,14 @@
             {{/foreach}}
           </div>
         {{/if}}
-      </section>
+      </div>
     </header>
     
     {{{body}}}
 
     {{ghost_foot}}
 
+{{!--
     <footer>
       <section class="container">
         <div class="footer-left">
@@ -61,6 +62,6 @@
           <span class="credits"><a href="https://github.com/tobimori/dreams/">Dreams</a> made with ❤︎ by <a href="https://github.com/tobimori/">tobimori</a>.</span>
         </div>
       </section>
-    </footer>
+    </footer>--}}
   </body>
 </html>

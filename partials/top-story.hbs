@@ -1,6 +1,5 @@
-<header class="featured">
-  <img class="feature-image" src="{{feature_image}}">
-  <section class="container">
+<header class="featured" style="background: url({{feature_image}}) no-repeat center / cover, #111111">
+  <div class="container">
     <div class="featured-container">
       <a href="{{primary_tag.url}}" class="feature-tag">
         {{> "icons/tag"}}
@@ -9,9 +8,9 @@
       <h1 class="feature-headline">{{title}}</h1>
       <p class="feature-preview">{{excerpt}}</p>
       <a href="{{url}}" class="read-button">
-        Read
+        Read More
         {{> "icons/chevron"}}
       </a>
     </div>
-  </section>
+  </div>
 </header>
