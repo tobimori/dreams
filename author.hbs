@@ -3,10 +3,12 @@
 <header class="featured" style="background: linear-gradient(to top, rgba(0,0,0,.2), rgba(0,0,0,.3)), url({{cover_image}}) no-repeat center / cover, #111">
   <div class="container">
     <div class="featured-container">
+      {{#if location}}
       <span class="author-location">
         {{> "icons/location"}}
         From {{location}}
       </span>
+      {{/if}}
       <h1 class="feature-headline">{{name}}</h1>
     </div>
   </div>
@@ -17,9 +19,7 @@
   <section class="articles">
     <article class="image-right no-margin">
       <div class="margin-right">
-        <a href="{{posts.0.url}}">
-          <h1>Hi, <br> I'm {{name}}.</h1>
-        </a>
+        <h1>Hi, <br> I'm {{name}}.</h1>
         {{#if bio}}
           <p>{{bio}}</p>
         {{/if}}
@@ -46,25 +46,30 @@
       </div>
     </article>
     {{/author}}
+    <article>
+      <div class="margin-right">
+        <a href="{{posts.0.url}}">
+          <img class="post-image" src="{{posts.0.feature_image}}">
+        </a>
+      </div>
+      <div class="margin-left">
+        <a href="{{posts.0.url}}">
+          <h1>{{posts.0.title}}</h1>
+        </a>
+        <div class="meta">
+          by <a href="{{posts.0.authors.0.url}}" class="author"><span>{{posts.0.authors.0.name}}</span></a> on
+          <span>{{date posts.0.published_at format="DD. MMMM YYYY"}}</span>
+        </div>
+        <p>{{posts.0.excerpt}}</p>
+        <a href="{{posts.0.primary_tag.url}}" class="tag">
+          {{> "icons/tag"}}
+          {{posts.0.primary_tag.name}}
+        </a>
+      </div>
+    </article>
     <div class="two-articles">
       <article>
         <div class="margin-right">
-          <a href="{{posts.0.url}}">
-            <h1>{{posts.0.title}}</h1>
-          </a>
-          <div class="meta">
-            by <a href="{{posts.0.authors.0.url}}" class="author"><span>{{posts.0.authors.0.name}}</span></a> on
-            <span>{{date posts.0.published_at format="DD. MMMM YYYY"}}</span>
-          </div>
-          <p>{{posts.0.excerpt}}</p>
-          <a href="{{posts.0.primary_tag.url}}" class="tag">
-            {{> "icons/tag"}}
-            {{posts.0.primary_tag.name}}
-          </a>
-        </div>
-      </article>
-      <article>
-        <div class="margin-left">
           <a href="{{posts.1.url}}">
             <h1>{{posts.1.title}}</h1>
           </a>
@@ -79,25 +84,41 @@
           </a>
         </div>
       </article>
+      <article>
+        <div class="margin-left">
+          <a href="{{posts.2.url}}">
+            <h1>{{posts.2.title}}</h1>
+          </a>
+          <div class="meta">
+            by <a href="{{posts.2.authors.0.url}}" class="author"><span>{{posts.2.authors.0.name}}</span></a> on
+            <span>{{date posts.2.published_at format="DD. MMMM YYYY"}}</span>
+          </div>
+          <p>{{posts.2.excerpt}}</p>
+          <a href="{{posts.2.primary_tag.url}}" class="tag">
+            {{> "icons/tag"}}
+            {{posts.2.primary_tag.name}}
+          </a>
+        </div>
+      </article>
     </div>
-    <article>
+    <article class="image-right">
       <div class="margin-right">
-        <a href="{{posts.2.url}}">
-          <img class="post-image" src="{{posts.2.feature_image}}">
+        <a href="{{posts.3.url}}">
+          <h1>{{posts.3.title}}</h1>
+        </a>
+        <div class="meta">
+          by <a href="{{posts.3.authors.0.url}}" class="author"><span>{{posts.3.authors.0.name}}</span></a> on
+          <span>{{date posts.3.published_at format="DD. MMMM YYYY"}}</span>
+        </div>
+        <p>{{posts.3.excerpt}}</p>
+        <a href="{{posts.3.primary_tag.url}}" class="tag">
+          {{> "icons/tag"}}
+          {{posts.3.primary_tag.name}}
         </a>
       </div>
       <div class="margin-left">
-        <a href="{{posts.2.url}}">
-          <h1>{{posts.2.title}}</h1>
-        </a>
-        <div class="meta">
-          by <a href="{{posts.2.authors.0.url}}" class="author"><span>{{posts.2.authors.0.name}}</span></a> on
-          <span>{{date posts.2.published_at format="DD. MMMM YYYY"}}</span>
-        </div>
-        <p>{{posts.2.excerpt}}</p>
-        <a href="{{posts.2.primary_tag.url}}" class="tag">
-          {{> "icons/tag"}}
-          {{posts.2.primary_tag.name}}
+        <a href="{{posts.3.url}}">
+          <img class="post-image" src="{{posts.3.feature_image}}">
         </a>
       </div>
     </article>

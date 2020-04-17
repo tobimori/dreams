@@ -102,16 +102,33 @@ header.featured {
       color: white;
       justify-content: center;
   
-      span.author-location {
+      aside.meta {
+        display: flex;
+        flex-direction: row;
+
+        &.text {
+          color: #f5f5f5;
+
+          span {
+            text-indent: 0.3em;
+
+            &.special {
+              color: #fff;
+              font-weight: 600;
+            }
+          }
+        }
+      }
+
+      span.author-location, span.readingtime {
         line-height: 1.2em;
         flex-direction: row;
         align-items: center;
         display: flex;
-        margin-left: .2em;
         width: 30%;
 
         svg {
-          margin-right: 1em;
+          margin: 0 1em 0 2em;
           height: 1.2em;
           width: auto;  
         }     
@@ -125,7 +142,6 @@ header.featured {
         align-items: center;
         display: flex;
         margin-left: .2em;
-        width: 30%;
 
         &.feature-tag {
           svg {
@@ -262,6 +278,18 @@ section.articles {
       border-radius: 5px;
     }
   }
+}
+
+article.main {
+  position: relative;
+  top: -150px;
+  background-color: white;
+  z-index: 2;
+  padding: 50px 20%;
+  border-radius: 5px;
+  color: #545454;
+  font-size: 1.05em;
+  text-align: justify;
 }
 
 footer {
