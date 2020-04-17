@@ -1,46 +1,105 @@
 {{!< default}}
-
-<div class="gh-page">
-    <div class="gh-container">
-
-        {{#author}}
-        <header class="gh-page-head">
-            {{#if profile_image}}
-                <img class="gh-author-image" src="{{profile_image}}" alt="{{name}}" />
-            {{/if}}
-
-            <h1>{{name}}</h1>
-            {{#if bio}}
-                <p>{{bio}}</p>
-            {{/if}}
-
-            <div class="gh-author-meta">
-                <div class="gh-author-links">
-                    {{#if website}}
-                        <a href="{{website}}" target="_blank" rel="noopener">Website</a>
-                    {{/if}}
-                    {{#if twitter}}
-                        <a href="{{twitter_url}}" target="_blank" rel="noopener">Twitter</a>
-                    {{/if}}
-                    {{#if facebook}}
-                        <a href="{{facebook_url}}" target="_blank" rel="noopener">Facebook</a>
-                    {{/if}}
-                </div>
-            </div>
-
-            {{#if cover_image}}
-                <img class="gh-page-image" src="{{cover_image}}" alt="{{name}}" />
-            {{/if}}
-        </header>
-        {{/author}}
-
-        <div class="gh-postfeed">
-        {{#foreach posts}}
-
-            {{> "card"}} {{!-- partials/card.hbs --}}
-
-        {{/foreach}}
-        </div>
-
+{{#author}}
+<header class="featured" style="background: linear-gradient(to top, rgba(0,0,0,.2), rgba(0,0,0,.3)), url({{cover_image}}) no-repeat center / cover, #111">
+  <div class="container">
+    <div class="featured-container">
+      <span class="author-location">
+        {{> "icons/location"}}
+        From {{location}}
+      </span>
+      <h1 class="feature-headline">{{name}}</h1>
     </div>
+  </div>
+</header>
+
+
+<div class="container overlap-further">
+  <section class="articles">
+    <article class="image-right no-margin">
+      <div class="margin-right">
+        <a href="{{posts.0.url}}">
+          <h1>Hi, <br> I'm {{name}}.</h1>
+        </a>
+        {{#if bio}}
+          <p>{{bio}}</p>
+        {{/if}}
+        {{#if website}}
+          <a href="{{website}}" class="icon-only">
+            {{> "icons/web"}}
+          </a>
+        {{/if}}
+        {{#if twitter}}
+          <a href="{{twitter_url}}" class="icon-only">
+            {{> "icons/twitter"}}
+          </a>
+        {{/if}}
+        {{#if facebook}}
+          <a href="{{facebook_url}}" class="icon-only">
+            {{> "icons/facebook"}}
+          </a>
+        {{/if}}
+      </div>
+      <div class="margin-left">
+        {{#if profile_image}}
+          <img class="post-image" src="{{profile_image}}" alt="{{name}}">
+        {{/if}}
+      </div>
+    </article>
+    {{/author}}
+    <div class="two-articles">
+      <article>
+        <div class="margin-right">
+          <a href="{{posts.0.url}}">
+            <h1>{{posts.0.title}}</h1>
+          </a>
+          <div class="meta">
+            by <a href="{{posts.0.authors.0.url}}" class="author"><span>{{posts.0.authors.0.name}}</span></a> on
+            <span>{{date posts.0.published_at format="DD. MMMM YYYY"}}</span>
+          </div>
+          <p>{{posts.0.excerpt}}</p>
+          <a href="{{posts.0.primary_tag.url}}" class="tag">
+            {{> "icons/tag"}}
+            {{posts.0.primary_tag.name}}
+          </a>
+        </div>
+      </article>
+      <article>
+        <div class="margin-left">
+          <a href="{{posts.1.url}}">
+            <h1>{{posts.1.title}}</h1>
+          </a>
+          <div class="meta">
+            by <a href="{{posts.1.authors.0.url}}" class="author"><span>{{posts.1.authors.0.name}}</span></a> on
+            <span>{{date posts.1.published_at format="DD. MMMM YYYY"}}</span>
+          </div>
+          <p>{{posts.1.excerpt}}</p>
+          <a href="{{posts.1.primary_tag.url}}" class="tag">
+            {{> "icons/tag"}}
+            {{posts.1.primary_tag.name}}
+          </a>
+        </div>
+      </article>
+    </div>
+    <article>
+      <div class="margin-right">
+        <a href="{{posts.2.url}}">
+          <img class="post-image" src="{{posts.2.feature_image}}">
+        </a>
+      </div>
+      <div class="margin-left">
+        <a href="{{posts.2.url}}">
+          <h1>{{posts.2.title}}</h1>
+        </a>
+        <div class="meta">
+          by <a href="{{posts.2.authors.0.url}}" class="author"><span>{{posts.2.authors.0.name}}</span></a> on
+          <span>{{date posts.2.published_at format="DD. MMMM YYYY"}}</span>
+        </div>
+        <p>{{posts.2.excerpt}}</p>
+        <a href="{{posts.2.primary_tag.url}}" class="tag">
+          {{> "icons/tag"}}
+          {{posts.2.primary_tag.name}}
+        </a>
+      </div>
+    </article>
+  </section>
 </div>

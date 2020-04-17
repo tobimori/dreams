@@ -81,6 +81,11 @@ header.global {
   }
 }
 
+div.overlap-further {
+  position: relative;
+  top: -10rem;
+}
+
 header.featured {
   height: 100vh;
   display: flex;
@@ -97,6 +102,21 @@ header.featured {
       color: white;
       justify-content: center;
   
+      span.author-location {
+        line-height: 1.2em;
+        flex-direction: row;
+        align-items: center;
+        display: flex;
+        margin-left: .2em;
+        width: 30%;
+
+        svg {
+          margin-right: 1em;
+          height: 1.2em;
+          width: auto;  
+        }     
+      }
+
       a {
         text-decoration: none;
         color: currentColor;
@@ -222,6 +242,17 @@ section.articles {
         }
       }
 
+      a.icon-only {
+        text-decoration: none;
+        color: currentColor;
+        line-height: 1.2em;
+
+        svg {
+          height: 1.2em;
+          width: auto;
+          margin-right: 1em;
+        }
+      }
     }
 
     img.post-image {
