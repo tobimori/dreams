@@ -1,0 +1,44 @@
+name: Deploy Theme on Demo
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    container: node:12-buster-slim
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - name: Install Gulp
+        run: npm install --global gulp-cli
+      - name: Install Dependencies
+        run: npm install
+      - name: Build Assets
+        run: npm run build --if-present
+      - name: Remove node_modules
+        run: rm -r node_modules/
+      - uses: actions/upload-artifact@v1
+        with:
+          name: theme-built
+          path: .
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/download-artifact@v1
+        with:
+          name: theme-built
+          path: .
+      - name: Deploy Ghost Theme
+        uses: TryGhost/action-deploy-theme@master
+        with:
+          api-url: ${{ secrets.GHOST_ADMIN_API_URL }}
+          api-key: ${{ secrets.GHOST_ADMIN_API_KEY }}
+          exclude: "node_modules/* .gitignore .gitattributes gulpfile.js README.md LICENSE.md routes.yaml .github/*"
