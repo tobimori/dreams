@@ -142,7 +142,8 @@ header.featured {
         align-items: center;
         display: flex;
         margin-left: .2em;
-
+        text-shadow: 0 1rem 2rem rgba(50, 50, 50, .5);    
+        
         &.feature-tag {
           svg {
             margin-right: 1em;
@@ -168,6 +169,7 @@ header.featured {
       h1.feature-headline {
         font-size: 4em;
         margin: .2em 0 0 0;
+        text-shadow: 0 1rem 2rem rgba(50, 50, 50, .5);
       }
 
       p.feature-preview {
@@ -175,6 +177,7 @@ header.featured {
         width: 50%;
         line-height: 1.55;
         letter-spacing: .02em;
+        text-shadow: 0 1rem 2rem rgba(50, 50, 50, .5);        
       }
     }
   }
