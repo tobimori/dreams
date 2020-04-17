@@ -1,6 +1,18 @@
 {{!< default}}
 
 {{#post}}
+<header class="featured" style="background: linear-gradient(to top, rgba(0,0,0,.2), rgba(0,0,0,.3)), url({{feature_image}}) no-repeat center / cover, #111111">
+  <div class="container">
+    <div class="featured-container">
+      <a href="{{primary_tag.url}}" class="feature-tag">
+        {{> "icons/tag"}}
+        {{primary_tag.name}}
+      </a>
+      <h1 class="feature-headline">{{title}}</h1>
+      {{!--<p class="feature-preview">{{excerpt}}</p>--}}
+    </div>
+  </div>
+</header>
 
 <article class="gh-article {{post_class}}">
 

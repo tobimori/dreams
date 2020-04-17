@@ -1,79 +1,80 @@
 {{!< default}}
 {{#tag}}
-<header class="featured">
-  <img class="feature-image" src="{{feature_image}}">
-  <section class="container">
+<header class="featured"  style="background: linear-gradient(to top, rgba(0,0,0,.2), rgba(0,0,0,.3)), url({{feature_image}}) no-repeat center / cover, #c1c1c1">
+  <div class="container">
     <div class="featured-container">
       <h1 class="feature-headline">{{name}}</h1>
       <p class="feature-preview">{{description}}</p>
     </div>
-  </section>
+  </div>
 </header>
 {{/tag}}
 
-<section class="container articles">
-  <article class="image-right no-margin">
-    <div class="margin-right">
-      <h1>{{posts.0.title}}</h1>
-      <div class="meta">
-        by <span>{{posts.0.authors.0.name}}</span> on
-        <span>{{date posts.0.published_at format="DD. MMMM YYYY"}}</span>
+<div class="container">
+  <section class="articles">
+    <article class="image-right no-margin">
+      <div class="margin-right">
+        <h1>{{posts.0.title}}</h1>
+        <div class="meta">
+          by <span>{{posts.0.authors.0.name}}</span> on
+          <span>{{date posts.0.published_at format="DD. MMMM YYYY"}}</span>
+        </div>
+        <p>{{posts.0.excerpt}}</p>
+        <a href="{{posts.0.primary_tag.url}}" class="tag">
+          {{> "icons/tag"}}
+          {{posts.0.primary_tag.name}}
+        </a>
       </div>
-      <p>{{posts.0.excerpt}}</p>
-      <a href="{{posts.0.primary_tag.url}}" class="tag">
-        {{> "icons/tag"}}
-        {{posts.0.primary_tag.name}}
-      </a>
+      <div class="margin-left">
+        <img class="post-image" src="{{posts.0.feature_image}}">
+      </div>
+    </article>
+    <div class="two-articles">
+      <article>
+        <div class="margin-right">
+          <h1>{{posts.1.title}}</h1>
+          <div class="meta">
+            by <span>{{posts.1.authors.0.name}}</span> on
+            <span>{{date posts.1.published_at format="DD. MMMM YYYY"}}</span>
+          </div>
+          <p>{{posts.1.excerpt}}</p>
+          <a href="{{posts.1.primary_tag.url}}" class="tag">
+            {{> "icons/tag"}}
+            {{posts.1.primary_tag.name}}
+          </a>
+        </div>
+      </article>
+      <article>
+        <div class="margin-left">
+          <h1>{{posts.2.title}}</h1>
+          <div class="meta">
+            by <span>{{posts.2.authors.0.name}}</span> on
+            <span>{{date posts.2.published_at format="DD. MMMM YYYY"}}</span>
+          </div>
+          <p>{{posts.2.excerpt}}</p>
+          <a href="{{posts.2.primary_tag.url}}" class="tag">
+            {{> "icons/tag"}}
+            {{posts.2.primary_tag.name}}
+          </a>
+        </div>
+      </article>
     </div>
-    <div class="margin-left">
-      <img class="post-image" src="{{posts.0.feature_image}}">
-    </div>
-  </article>
-  <div class="two-articles">
     <article>
       <div class="margin-right">
-        <h1>{{posts.1.title}}</h1>
-        <div class="meta">
-          by <span>{{posts.1.authors.0.name}}</span> on
-          <span>{{date posts.1.published_at format="DD. MMMM YYYY"}}</span>
-        </div>
-        <p>{{posts.1.excerpt}}</p>
-        <a href="{{posts.1.primary_tag.url}}" class="tag">
-          {{> "icons/tag"}}
-          {{posts.1.primary_tag.name}}
-        </a>
+        <img class="post-image" src="{{posts.3.feature_image}}">
       </div>
-    </article>
-    <article>
       <div class="margin-left">
-        <h1>{{posts.2.title}}</h1>
+        <h1>{{posts.3.title}}</h1>
         <div class="meta">
-          by <span>{{posts.2.authors.0.name}}</span> on
-          <span>{{date posts.2.published_at format="DD. MMMM YYYY"}}</span>
+          by <span>{{posts.3.authors.0.name}}</span> on
+          <span>{{date posts.3.published_at format="DD. MMMM YYYY"}}</span>
         </div>
-        <p>{{posts.2.excerpt}}</p>
-        <a href="{{posts.2.primary_tag.url}}" class="tag">
+        <p>{{posts.3.excerpt}}</p>
+        <a href="{{posts.3.primary_tag.url}}" class="tag">
           {{> "icons/tag"}}
-          {{posts.2.primary_tag.name}}
+          {{posts.3.primary_tag.name}}
         </a>
       </div>
     </article>
-  </div>
-  <article>
-    <div class="margin-right">
-      <img class="post-image" src="{{posts.3.feature_image}}">
-    </div>
-    <div class="margin-left">
-      <h1>{{posts.3.title}}</h1>
-      <div class="meta">
-        by <span>{{posts.3.authors.0.name}}</span> on
-        <span>{{date posts.3.published_at format="DD. MMMM YYYY"}}</span>
-      </div>
-      <p>{{posts.3.excerpt}}</p>
-      <a href="{{posts.3.primary_tag.url}}" class="tag">
-        {{> "icons/tag"}}
-        {{posts.3.primary_tag.name}}
-      </a>
-    </div>
-  </article>
-</section>
+  </section>
+</div>

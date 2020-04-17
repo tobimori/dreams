@@ -152,7 +152,13 @@ section.articles {
   z-index: 2;
   padding: 50px 8%;
   border-radius: 5px;
+  display: grid;
 
+  a {
+    text-decoration: none;
+    color: currentColor;
+  }
+  
   .no-margin {
     margin-top: 0;
   }

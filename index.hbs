@@ -18,9 +18,11 @@
   <section class="articles">
     <article class="image-right no-margin">
       <div class="margin-right">
-        <h1>{{posts.0.title}}</h1>
+        <a href="{{posts.0.url}}">
+          <h1>{{posts.0.title}}</h1>
+        </a>
         <div class="meta">
-          by <span>{{posts.0.authors.0.name}}</span> on <span>{{date posts.0.published_at format="DD. MMMM YYYY"}}</span>
+          by <a href="{{posts.0.authors.0.url}}" class="author"><span>{{posts.0.authors.0.name}}</span></a> on <span>{{date posts.0.published_at format="DD. MMMM YYYY"}}</span>
         </div>
         <p>{{posts.0.excerpt}}</p>
         <a href="{{posts.0.primary_tag.url}}" class="tag">
@@ -29,15 +31,19 @@
         </a>
       </div>
       <div class="margin-left">
-        <img class="post-image" src="{{posts.0.feature_image}}">
+        <a href="{{posts.0.url}}">
+          <img class="post-image" src="{{posts.0.feature_image}}">
+        </a>
       </div>
     </article>
     <div class="two-articles">
       <article>
         <div class="margin-right">
-          <h1>{{posts.1.title}}</h1>
+          <a href="{{posts.1.url}}">
+            <h1>{{posts.1.title}}</h1>
+          </a>
           <div class="meta">
-            by <span>{{posts.1.authors.0.name}}</span> on
+            by <a href="{{posts.1.authors.0.url}}" class="author"><span>{{posts.1.authors.0.name}}</span></a> on
             <span>{{date posts.1.published_at format="DD. MMMM YYYY"}}</span>
           </div>
           <p>{{posts.1.excerpt}}</p>
@@ -49,9 +55,11 @@
       </article>
       <article>
         <div class="margin-left">
-          <h1>{{posts.2.title}}</h1>
+          <a href="{{posts.2.url}}">
+            <h1>{{posts.2.title}}</h1>
+          </a>
           <div class="meta">
-            by <span>{{posts.2.authors.0.name}}</span> on
+            by <a href="{{posts.2.authors.0.url}}" class="author"><span>{{posts.2.authors.0.name}}</span></a> on
             <span>{{date posts.2.published_at format="DD. MMMM YYYY"}}</span>
           </div>
           <p>{{posts.2.excerpt}}</p>
@@ -64,12 +72,16 @@
     </div>
     <article>
       <div class="margin-right">
-        <img class="post-image" src="{{posts.3.feature_image}}">
+        <a href="{{posts.3.url}}">
+          <img class="post-image" src="{{posts.3.feature_image}}">
+        </a>
       </div>
       <div class="margin-left">
-        <h1>{{posts.3.title}}</h1>
+        <a href="{{posts.3.url}}">
+          <h1>{{posts.3.title}}</h1>
+        </a>
         <div class="meta">
-          by <span>{{posts.3.authors.0.name}}</span> on <span>{{date posts.3.published_at format="DD. MMMM YYYY"}}</span>
+          by <a href="{{posts.3.authors.0.url}}" class="author"><span>{{posts.3.authors.0.name}}</span></a> on <span>{{date posts.3.published_at format="DD. MMMM YYYY"}}</span>
         </div>
         <p>{{posts.3.excerpt}}</p>
         <a href="{{posts.3.primary_tag.url}}" class="tag">
