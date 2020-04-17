@@ -35,8 +35,7 @@ header.global {
   padding: 30px 0;
   width: 100%;
   position: absolute;
-  text-shadow: 0 1rem 2rem rgba(50, 50, 50, .5);    
-  
+
   div {
     display: flex;
     justify-content: space-between;
@@ -57,6 +56,7 @@ header.global {
       color: #fff;
       margin: 0 1em;
       text-transform: uppercase;
+      text-shadow: 0 1rem 2rem rgba(50, 50, 50, .5); 
 
       &:first-child {
         margin-left: 0;
@@ -70,7 +70,7 @@ header.global {
 
   div.brand {
     img.logo {
-      filter: brightness(255);
+      filter: brightness(255) drop-shadow(0 1rem 2rem rgba(50, 50, 50, .5));;
       height: 2em;
     }
 
@@ -78,6 +78,7 @@ header.global {
       font-size: 1.5em;
       font-weight: 700;
       color: #fff;
+      text-shadow: 0 1rem 2rem rgba(50, 50, 50, .5);   
     }
   }
 }
