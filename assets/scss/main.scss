@@ -96,7 +96,7 @@ header.featured {
   div.container {
     position: relative;
     top: -5rem;
-    
+
     div.featured-container {
       display: flex;
       flex-direction: column;
@@ -121,6 +121,8 @@ header.featured {
         &.read-button {
           text-transform: uppercase;
           letter-spacing: .03em;
+          font-weight: 600;
+
           svg {
             margin-left: 1em;
           }
@@ -235,7 +237,7 @@ footer {
   background-color: #f6f8fa;
   width: 100%;
 
-  section {
+  div.container {
     display: flex;
     justify-content: space-between;
     align-items: center;
