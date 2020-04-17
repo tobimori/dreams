@@ -7,8 +7,8 @@ Dreams is inspired by an UI concept by my friend [Florentin](https://twitter.com
 ## License
 This theme is released under the Creative Commons Attribution 4.0 License, which means you can:
 
-- Use them for personal stuff
-- Use them for commercial stuff
-- Change them however you like
+- Use it for personal stuff
+- Use it for commercial stuff
+- Change it however you like
 
 Without paying a penny! In exchange, just give me credit and tell your friends about my work :)
