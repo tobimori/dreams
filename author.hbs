@@ -14,39 +14,41 @@
   </div>
 </header>
 
-<div class="container overlap-further">
-  <section class="articles">
-    <article class="image-right no-margin">
-      <div class="margin-right">
-        <h1>Hi, <br> I'm {{name}}.</h1>
+<div class="container">
+  <aside class="about">
+    <div class="row">
+      <div class="column left">
+        <h1>Hi, I'm {{name}}.</h1>
         {{#if bio}}
           <p>{{bio}}</p>
         {{/if}}
-        {{#if website}}
-          <a href="{{website}}" class="icon-only">
+        <div class="icons">
+          {{#if website}}
+          <a href="{{website}}" class="icon">
             {{> "icons/web"}}
           </a>
-        {{/if}}
-        {{#if twitter}}
-          <a href="{{twitter_url}}" class="icon-only">
+          {{/if}}
+          {{#if twitter}}
+          <a href="{{twitter_url}}" class="icon">
             {{> "icons/twitter"}}
           </a>
-        {{/if}}
-        {{#if facebook}}
-          <a href="{{facebook_url}}" class="icon-only">
+          {{/if}}
+          {{#if facebook}}
+          <a href="{{facebook_url}}" class="icon">
             {{> "icons/facebook"}}
           </a>
-        {{/if}}
+          {{/if}}
+        </div>
       </div>
-      <div class="margin-left">
+      <div class="column right">
         {{#if profile_image}}
-          <img class="post-image" src="{{profile_image}}" alt="{{name}}">
+          <img class="profile-image" src="{{profile_image}}" alt="{{name}}">
         {{/if}}
       </div>
-    </article>
-    {{/author}}
+    </div>
   </section>
 </div>
+{{/author}}
 
 <div class="container">
   <section class="articles">

@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+// device sizes
+$small-device: "only screen and (max-width: 735px)";
+$medium-device: "only screen and (max-width: 1068px)";
+$large-device: "only screen and (min-width: 1442px)";
+$ultra-large: "only screen and (min-width: 2202px)";
+$retina-device: "only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 1.5dppx), only screen and (min-resolution: 144dpi)";
+
+
 html,
 body {
   font-family: 'Montserrat', sans-serif;
@@ -15,20 +23,28 @@ body {
   min-height: 100%;
 }
 
-figure,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+figure, h1, h2, h3, h4, h5, h6 {
   margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: currentColor;
 }
 
 div.container {
   width: 85%;
   max-width: 1000px;
   margin: 0 auto;
+}
+
+div.overlap {
+  position: relative;
+  top: -150px;
+
+  &.further {
+    top: -250px;
+  }
 }
 
 header.global {
@@ -83,10 +99,6 @@ header.global {
   }
 }
 
-div.overlap-further {
-  position: relative;
-  top: -10rem;
-}
 
 header.featured {
   height: 100vh;
@@ -186,9 +198,84 @@ header.featured {
 }
 
 
-section.articles {
+aside.about {
   position: relative;
-  top: -150px;
+  top: -250px;
+  background-color: white;
+  z-index: 2;
+//  border-radius: 5px;
+
+  div.row {
+    display: flex;
+    flex-direction: row;
+
+    @media #{$small-device} {
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+
+    div.column {
+      padding: 50px 5%;
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+
+      @media #{$small-device} {
+        width: 80%;
+      }
+
+      &.left {
+        padding-right: 2%;
+
+        @media #{$small-device} {
+          padding: 30px 5% 30px 5%;
+        }
+      }
+
+      &.right {
+        padding-left: 2%;
+
+        @media #{$small-device} {
+          padding: 30px 5% 0 5%;
+        }        
+      }
+
+      h1 {
+        font-size: 2.2em;
+        color: #303030;
+      }
+
+      p {
+        line-height: 1.55;
+        letter-spacing: .02em;        
+        color: #545454;
+      }
+
+      img.profile-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 5px;
+      }
+
+      div.icons {
+        display: flex;
+
+        a.icon {
+          line-height: 1.2em;
+
+          svg {
+            height: 1.2em;
+            width: auto;
+            margin-right: 1em;
+          }
+        }
+      }
+    }
+  }  
+}
+
+section.articles {
   background-color: white;
   z-index: 2;
   padding: 50px 8%;
@@ -257,18 +344,6 @@ section.articles {
 
         svg {
           float: left;
-          height: 1.2em;
-          width: auto;
-          margin-right: 1em;
-        }
-      }
-
-      a.icon-only {
-        text-decoration: none;
-        color: currentColor;
-        line-height: 1.2em;
-
-        svg {
           height: 1.2em;
           width: auto;
           margin-right: 1em;
