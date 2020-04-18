@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="{{@site.lang}}">
+  <!-- Published with Ghost and Dreams - a Ghost theme by tobimori. -->
+  <!-- Fork me on GitHub: https://github.com/tobimori/dreams -->
+  <!-- Content: Copyright {{@site.title}}, {{date format="YYYY"}}. All Rights Reserved. -->
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -24,11 +27,7 @@
           </a>
         </div>
         {{#if @site.navigation}}
-          <div class="nav">
-            {{#foreach @site.navigation}}
-              <a class="{{slug}}" href="{{url absolute="true"}}">{{label}}</a>
-            {{/foreach}}
-          </div>
+          {{navigation}}
         {{/if}}
       </div>
     </header>
@@ -48,11 +47,7 @@
             {{/if}}
           </a>
           {{#if @site.secondary_navigation}}
-            <div class="secondary-nav">
-              {{#foreach @site.secondary_navigation}}
-                <a class="{{slug}}" href="{{url absolute="true"}}"><span>{{label}}</span></a>
-              {{/foreach}}
-            </div>
+            {{navigation type="secondary"}}
           {{/if}}  
         </div>
         <div class="footer-right">
