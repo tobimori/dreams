@@ -34,6 +34,7 @@ Download the release, unpack it, then open the `post.hbs` file with a text edito
 ```
 
 by removing the `{{!--` in front of `<div class="container">` and the `--}}` behind `</script>`.
+Then replace `CHANGE-THIS` with your Disqus shortname.
 
 ## Theme development
 Use the package manager [npm](https://www.npmjs.com/) to install the required packages.
