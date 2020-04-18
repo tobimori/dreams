@@ -1,0 +1,43 @@
+<!-- Jquery-less Infinite Loading -->
+<script>
+  let page = 2;
+  let url_blog = window.location.href;
+  let ids = ['post-list']
+  let max_page = {{ pagination.pages }};
+  let currentlyLoading = false;
+  function ready(fn) {
+    if (document.readyState != 'loading') {
+      fn();
+    } else {
+      document.addEventListener('DOMContentLoaded', fn);
+    }
+  }
+  function loadContent() {
+    var req = new XMLHttpRequest();
+    req.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+        parser = new DOMParser();
+        doc = parser.parseFromString(this.responseText, "text/html");
+        ids.forEach((id) => {
+          document.getElementById(id).innerHTML += doc.getElementById(id).innerHTML;
+        })
+        currentlyLoading = false;
+      }
+    };
+    req.open("GET", url_blog + 'page/' + page, true);
+    req.send();
+    page = page + 1;
+  }
+  function bottomDistance() {
+    return Math.max(document.body.offsetHeight - (window.pageYOffset + window.innerHeight), 0);
+  }
+  ready(() => {
+    document.addEventListener('scroll', function () {
+      if (bottomDistance() < 800 && !currentlyLoading) {
+        currentlyLoading = true;
+        loadContent();
+      }
+    })
+  })
+</script>
+<!-- / Infinite Loading -->

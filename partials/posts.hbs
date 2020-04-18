@@ -1,4 +1,4 @@
-<section class="articles">
+<section id="post-list" class="articles">
     {{#if posts.0.title}}
     <div class="row">
         <article>
@@ -96,3 +96,5 @@
     </div>
     {{/if}}
 </section>
+
+{{> "infinite-loading"}}
