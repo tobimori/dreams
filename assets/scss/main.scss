@@ -74,6 +74,10 @@ header.global {
   width: 100%;
   position: absolute;
 
+  @media #{$small-device} {
+    padding: 15px 0;
+  }
+
   div {
     display: flex;
     justify-content: space-between;
@@ -93,7 +97,7 @@ header.global {
     li {
       margin: 0 1em;
       display: inline-block;
-      
+
       &:first-child {
         margin-left: 0;
       }
@@ -165,7 +169,12 @@ header.featured {
         flex-direction: row;
         align-items: center;
         display: flex;
-        width: 30%;
+        
+        &.readingtime {
+          svg {
+            margin-left: 1em;
+          }
+        }
 
         svg {
           margin: 0 1em 0 0;
@@ -210,14 +219,23 @@ header.featured {
         font-size: 4em;
         margin: .2em 0 0 0;
         text-shadow: 0 1rem 2rem rgba(50, 50, 50, .5);
+
+        @media #{$small-device} {
+          font-size: 2.6em;
+          line-height: .95em;
+        }
       }
 
       p.feature-preview {
-        padding-left: 0.2em;
+        padding-left: .2em;
         width: 50%;
         line-height: 1.55;
         letter-spacing: .02em;
         text-shadow: 0 1rem 2rem rgba(50, 50, 50, .5);        
+        
+        @media #{$small-device} {
+          width: 90%;
+        }      
       }
     }
   }
