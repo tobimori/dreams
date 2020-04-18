@@ -449,6 +449,10 @@ article.main {
   hyphens: auto;
   overflow-wrap: anywhere;
 
+  @media #{$small-device} {
+    padding: 2rem;
+  }
+
   p,
   li,
   blockquote {
@@ -477,6 +481,12 @@ article.main {
     width: 60%;
     float: right;
 
+    @media #{$small-device} {
+      width: 100%;
+      float: none;
+      left: 0;
+    }
+
     &.kg-width-wide {
       width: 100%;
       float: none;
@@ -488,6 +498,12 @@ article.main {
       position: relative;
       left: -10%;
       float: none;
+
+      @media #{$small-device} {
+        width: 110%;
+        float: none;
+        left: -5%;
+      }
     }
 
     img.kg-image {
@@ -528,6 +544,11 @@ article.main {
     width: 110%;
     position: relative;
     right: 5%;
+
+    @media #{$small-device} {
+      width: 100%;
+      right: 0;
+    }
 
     .kg-bookmark-container {
       display: flex;
@@ -619,6 +640,11 @@ article.main {
     position: relative;
     right: 25%;
     margin: 1em 0;
+    
+    @media #{$small-device} {
+      width: 110%;
+      right: 5%;
+    }
 
     div.kg-gallery-container {
       display: flex;
@@ -629,6 +655,10 @@ article.main {
         flex-direction: row;
         justify-content: space-evenly;
         width: 100%;
+
+        @media #{$small-device} {
+          flex-direction: column;
+        }
 
         div.kg-gallery-image {
           margin: .25em .5em;
@@ -651,19 +681,39 @@ footer {
   background-color: #f6f8fa;
   width: 100%;
 
+  @media #{$small-device} {
+    padding: 3rem 0;
+  }
+
   div.container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     
+    @media #{$small-device} {
+      flex-direction: column;
+      align-items: baseline;
+    }
+
     div.footer-right {
       text-align: right;
       font-size: 0.9em;
       line-height: 1.5em;
 
+      @media #{$small-device} {
+        margin-top: 2em;
+        text-align: left;
+      }
+
       span {
         display: block;
         color: #c1c1c1;
+
+        &.desktop-only {
+          @media #{$small-device} {
+            display: none;
+          }
+        }
       }
     }
 
@@ -678,13 +728,16 @@ footer {
         font-weight: 700;
       }
 
-      div.secondary-nav {
+      ul.nav {
         margin-top: 1em;
         text-transform: uppercase;
         color: #c1c1c1;
+        list-style: none;
+        padding: 0;
 
-        span {
+        li {
           margin-right: 1em;
+          display: inline;
         }
 
         a:hover {
