@@ -538,11 +538,12 @@ article.main {
       text-decoration: none;
       border-radius: 3px;
       transition: all 250ms ease-in-out;
-      background-color: #f5f5f5; 
+      background-color: #f9f9f9; 
 
       &:hover {
         text-decoration: none;
         transform: translate3D(0, -.5em, 0);
+        background-color: #f5f5f5; 
       }
 
       .kg-bookmark-content {
@@ -553,6 +554,7 @@ article.main {
 
         .kg-bookmark-title {
           font-weight: 600;
+          color: #111;
         }
 
         .kg-bookmark-metadata,
@@ -609,6 +611,37 @@ article.main {
         border-radius: 3px;
       }
     }
+  }
+
+  // galleries
+  figure.kg-gallery-card {
+    width: 150%;
+    position: relative;
+    right: 25%;
+    margin: 1em 0;
+
+    div.kg-gallery-container {
+      display: flex;
+      flex-direction: column;
+
+      div.kg-gallery-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 100%;
+
+        div.kg-gallery-image {
+          margin: .25em .5em;
+
+          img {
+            object-fit: cover;
+            width: 100%;
+            height: auto;
+            border-radius: 3px;
+          }
+        }
+      }
+    } 
   }
 }
 
