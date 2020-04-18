@@ -1,13 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+//                                                                       
+//      ,---,                                            ____               
+//    .'  .' `\                                        ,'  , `.             
+//  ,---.'     \   __  ,-.                          ,-+-,.' _ |             
+//  |   |  .`\  |,' ,'/ /|                       ,-+-. ;   , ||  .--.--.    
+//  :   : |  '  |'  | |' | ,---.     ,--.--.    ,--.'|'   |  || /  /    '   
+//  |   ' '  ;  :|  |   ,'/     \   /       \  |   |  ,', |  |,|  :  /`./   
+//  '   | ;  .  |'  :  / /    /  | .--.  .-. | |   | /  | |--' |  :  ;_     
+//  |   | :  |  '|  | ' .    ' / |  \__\/: . . |   : |  | ,     \  \    `.  
+//  '   : | /  ; ;  : | '   ;   /|  ," .--.; | |   : |  |/       `----.   \ 
+//  |   | '` ,/  |  , ; '   |  / | /  /  ,.  | |   | |`-'       /  /`--'  / 
+//  ;   :  .'     ---'  |   :    |;  :   .'   \|   ;/          '--'.     /  
+//  |   ,.'              \   \  / |  ,     .-./'---'             `--'---'   
+//  '---'                 `----'   `--`---'                                 
+//                                                                          
+//  Dreams is an open-source Ghost Theme by tobimori
+//  https://github.com/tobimori/dreams
 
-// device sizes
+// Get webfonts from Google Fonts CDN
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+// Variables for device sizes
 $small-device: "only screen and (max-width: 735px)";
 $medium-device: "only screen and (max-width: 1068px)";
 $large-device: "only screen and (min-width: 1442px)";
 $ultra-large: "only screen and (min-width: 2202px)";
 $retina-device: "only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 1.5dppx), only screen and (min-resolution: 144dpi)";
 
-// colors
+// Colors
 $light-background1: #fff;
 
 html,
@@ -417,6 +436,7 @@ section.articles {
   }  
 }
 
+// Post/Page view // Article
 article.main {
   position: relative;
   top: -150px;
@@ -426,12 +446,17 @@ article.main {
   border-radius: 5px;
   color: #545454;
   font-size: 1.05em;
-  text-align: justify;
+  hyphens: auto;
+  overflow-wrap: anywhere;
 
   p,
   li,
   blockquote {
     line-height: 1.45;
+  }
+
+  p {
+    text-align: justify; // block text for paragraphs
   }
 
   h1,
@@ -440,10 +465,11 @@ article.main {
   h4,
   h5,
   h6 {
-    margin-bottom: -0.5em;
-    color: #272727;
+    margin-bottom: -0.5em; // make headlines align to text
+    color: #272727; // color of headlines
   }
 
+  // Image cards w/ 3 widths
   figure.kg-image-card {
     margin: 1em 0;
     position: relative;
@@ -468,6 +494,32 @@ article.main {
       width: 100%;
       border-radius: 5px;
     }
+  }
+
+  // codeboxes
+  pre {
+    background-color: #f5f5f5;      
+    padding: 2em;
+    display: block;
+    overflow-x: auto;
+    page-break-inside: avoid;
+    border-radius: 3px;
+
+    // fix applying of inline styles in code boxes
+    code {
+      background-color: inherit;
+      padding: 0;
+    }
+  }
+
+  // inline code
+  code {
+    font-family: "Fira Code", monospace;
+    color: #666;
+    background-color: #f5f5f5;
+    border-radius: 2px;
+    padding: 0.3em;
+    font-size: 14px;
   }
 }
 
