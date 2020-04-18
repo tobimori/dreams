@@ -33,5 +33,22 @@
   </article>
 </div>
 
+{{!-- Uncomment the code below, if you want to add Disqus Commenting --}}
+{{!--<div class="container">
+  <section id="disqus_thread" class="comments"></section>
+</div>
+<script>
+  var disqus_config = function () {
+    this.page.url = "{{url absolute="true"}}";
+    this.page.identifier = "ghost-{{comment_id}}"
+  };
+  (function () {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://dreams-theme.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>--}}
+{{!-- Make sure to replace CHANGE-THIS with your unique Disqus site shortname --}}
 
 {{/post}}

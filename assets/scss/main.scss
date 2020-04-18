@@ -700,6 +700,18 @@ article.main {
   }
 }
 
+section.comments {
+  position: relative;
+  top: -80px;
+  background-color: white;
+  z-index: 2;
+  padding: 50px 20%;
+  border-radius: 5px;
+
+  @media #{$small-device} {
+    padding: 2rem;
+  }
+}
 // Footer
 footer {
   padding: 5rem 0;
