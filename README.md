@@ -27,6 +27,14 @@ Then, head over to Ghost Admin and upload the theme on the Design page.
 ## Configuration
 ### Disqus
 
+Download the release, unpack it, then open the `post.hbs` file with a text editor of your choice and uncomment the text under 
+
+```
+{{!-- Uncomment the code below, if you want to add Disqus Commenting --}}
+```
+
+by removing the `{{!--` in front of `<div class="container">` and the `--}}` behind `</script>`.
+
 ## Theme development
 Use the package manager [npm](https://www.npmjs.com/) to install the required packages.
 Inside the projects folder, execute:
