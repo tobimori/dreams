@@ -356,6 +356,8 @@ section.articles {
     }
 
     img {
+      object-fit: cover;
+      max-height: 25rem;
       width: 100%;
     }
   }
