@@ -15,6 +15,7 @@
 //                                                                          
 //  Dreams is an open-source Ghost Theme by tobimori
 //  https://github.com/tobimori/dreams
+//  Licensed under CC BY 4.0
 
 // Get webfonts from Google Fonts CDN
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap');
@@ -172,7 +173,7 @@ header.featured {
         
         &.readingtime {
           svg {
-            margin-left: 1em;
+            margin-left: 1.5em;
           }
         }
 
@@ -218,7 +219,7 @@ header.featured {
       h1.feature-headline {
         font-size: 4em;
         margin: .2em 0 0 0;
-        text-shadow: 0 1rem 2rem rgba(50, 50, 50, .5);
+        text-shadow: 0 1rem 2rem rgba(50, 50, 50, .2);
 
         @media #{$small-device} {
           font-size: 2.6em;
@@ -235,6 +236,7 @@ header.featured {
         
         @media #{$small-device} {
           width: 90%;
+          font-size: 14px;
         }      
       }
     }
